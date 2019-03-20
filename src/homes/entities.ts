@@ -21,11 +21,11 @@ export class Home extends BaseEntity {
   @Column('text')
   description: string
 
-  @Column('integer', { name: 'city_id', nullable: true })
-  cityId: number
+  // @Column('integer', { name: 'city_id', nullable: true })
+  // cityId: number
 
-  @Column('integer', { name: 'user_id', nullable: true })
-  userId: number
+  // @Column('integer', { name: 'user_id', nullable: true })
+  // userId: number
 
   @OneToMany(_ => Comment, comment => comment.home)
   comment: Comment[]

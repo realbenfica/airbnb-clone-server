@@ -13,8 +13,8 @@ export default class Comment extends BaseEntity {
     @Column("text")
     comment: string
 
-    @Column('integer', { name: 'home_id', nullable: true })
-    homeId: number
+    // @Column('integer', { name: 'home_id', nullable: true })
+    // homeId: number
 
     @ManyToOne(_ => User, user => user.comment)
     user: User
