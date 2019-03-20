@@ -3,7 +3,7 @@ import User from '../users/entity'
 import {  Home } from '../homes/entities'
 
 @Entity()
-export class City extends BaseEntity {
+export class Location extends BaseEntity {
 
   @PrimaryGeneratedColumn()
   id?: number
@@ -23,9 +23,9 @@ export class City extends BaseEntity {
   @Column('integer', { name: 'user_id', nullable:true})
   userId: number
 
-  @ManyToOne(_ => User, user => user.cities)
+  @ManyToOne(_ => User, user => user.locations)
   user: User;
 
-  @OneToMany(_ => Home, home => home.city)
+  @OneToMany(_ => Home, home => home.location)
   homes: Home []
 }
