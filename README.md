@@ -1,4 +1,4 @@
-# Bed and Breakfast (server)
+# Airbnb-clone (server)
 
 This is the backend for my individual Airbnb clone built with Typescript and TypeORM. In this app you can find a home to stay in, in any given city. As a user you can also add cities and homes to the database. 
 
