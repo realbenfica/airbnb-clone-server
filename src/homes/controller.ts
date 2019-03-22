@@ -24,7 +24,7 @@ export default class HomeController {
     return Home.findOneById(id)
   }
 
-  @Get('/tickets')
+  @Get('/homes')
   getTickets() {
     return Home.find()
   }
