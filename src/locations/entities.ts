@@ -12,13 +12,7 @@ export class Location extends BaseEntity {
   name: string
 
   @Column('text',{nullable:true})
-  description: string
-
-  @Column('text',{nullable:true})
   picture: string
-
-  @Column('text',{nullable:true})
-  date: number
 
   @Column('integer', { name: 'user_id', nullable:true})
   userId: number

@@ -9,17 +9,20 @@ export class Home extends BaseEntity {
   @PrimaryGeneratedColumn()
   id?: number
 
-  @IsString()
-  @Column('text')
+  @Column('text',{nullable:true})
+  area: string
+
+  @Column('text',{nullable:true})
+  description: string
+
+  @Column('text',{nullable:true})
   picture: string
+
+  @Column('text',{nullable:true})
+  date: number
 
   @Column('text')
   price: number
-
-  @MinLength(2)
-  @IsString()
-  @Column('text')
-  description: string
 
   @Column('integer', { name: 'location_id', nullable: true })
   locationId: number
