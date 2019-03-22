@@ -3,7 +3,7 @@ import { Action, BadRequestError, useKoaServer } from 'routing-controllers'
 import setupDb from './db'
 import UserController from './users/controller'
 import LoginController from './logins/controller'
-import CityController from './cities/controller'
+import LocationController from './locations/controller'
 import HomeController from './homes/controller'
 import CommentController from './comments/controller'
 import { verify } from './jwt'
@@ -20,7 +20,7 @@ useKoaServer(app, {
   controllers: [
     UserController,
     LoginController,
-    CityController,
+    LocationController,
     HomeController,
     CommentController
   ],

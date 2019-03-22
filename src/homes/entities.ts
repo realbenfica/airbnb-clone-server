@@ -1,7 +1,7 @@
 import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, ManyToOne, OneToMany} from 'typeorm'
 import User from '../users/entity'
 import { MinLength, IsString } from 'class-validator'
-import { City } from '../cities/entities'
+import { Location } from '../locations/entities'
 import Comment  from '../comments/entities'
 
 @Entity()
@@ -9,20 +9,23 @@ export class Home extends BaseEntity {
   @PrimaryGeneratedColumn()
   id?: number
 
-  @IsString()
-  @Column('text')
+  @Column('text',{nullable:true})
+  area: string
+
+  @Column('text',{nullable:true})
+  description: string
+
+  @Column('text',{nullable:true})
   picture: string
+
+  @Column('text',{nullable:true})
+  date: number
 
   @Column('text')
   price: number
 
-  @MinLength(2)
-  @IsString()
-  @Column('text')
-  description: string
-
-  @Column('integer', { name: 'city_id', nullable: true })
-  cityId: number
+  @Column('integer', { name: 'location_id', nullable: true })
+  locationId: number
 
   @Column('integer', { name: 'user_id', nullable: true })
   userId: number
@@ -30,8 +33,8 @@ export class Home extends BaseEntity {
   @OneToMany(_ => Comment, comment => comment.home)
   comment: Comment[]
 
-  @ManyToOne(_ => City, city => city.homes)
-  city: City;
+  @ManyToOne(_ => Location, location => location.homes)
+  location: Location;
 
   @ManyToOne(_ => User, user => user.homes)
   user: User

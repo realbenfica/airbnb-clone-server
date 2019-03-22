@@ -2,7 +2,7 @@ import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, OneToMany} from 'ty
 import { Exclude} from 'class-transformer';
 import { MinLength, IsString, IsEmail } from 'class-validator'
 import * as bcrypt from 'bcrypt'
-import { City } from '../cities/entities'
+import { Location } from '../locations/entities'
 import {  Home } from '../homes/entities'
 import Comment  from '../comments/entities'
 
@@ -32,8 +32,8 @@ export default class User extends BaseEntity {
   @Exclude({ toPlainOnly: true })
   password: string
 
-  @OneToMany(_ => City, city => city.user) 
-  cities: City[]
+  @OneToMany(_ => Location, location => location.user) 
+  locations: Location[]
 
   @OneToMany(_ => Home, home => home.user) 
   homes: Home[]

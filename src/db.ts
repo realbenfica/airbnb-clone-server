@@ -3,7 +3,7 @@ import { DefaultNamingStrategy } from 'typeorm/naming-strategy/DefaultNamingStra
 import { NamingStrategyInterface } from 'typeorm/naming-strategy/NamingStrategyInterface'
 import { snakeCase } from 'typeorm/util/StringUtils'
 import User from './users/entity'
-import { City } from './cities/entities'
+import { Location } from './locations/entities'
 import { Home } from './homes/entities'
 import Comment from './comments/entities'
 
@@ -32,7 +32,7 @@ export default () =>
     url: process.env.DATABASE_URL || 'postgres://postgres:secret@localhost:5432/postgres',
     entities: [
       User,
-      City, 
+      Location, 
       Home,
       Comment
     ],
