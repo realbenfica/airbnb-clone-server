@@ -1,6 +1,5 @@
 import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, ManyToOne, OneToMany} from 'typeorm'
 import User from '../users/entity'
-import { MinLength, IsString } from 'class-validator'
 import { Location } from '../locations/entities'
 import Comment  from '../comments/entities'
 
